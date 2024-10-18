@@ -29,15 +29,15 @@ run: run-machine-learning run-deep-learning-gpu run-deep-learning-cpu
 
 run-machine-learning:
 	@echo "Running the machine-learning-env Docker container..."
-	docker run --name $(MACHINE_LEARNING_IMAGE) -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(MACHINE_LEARNING_IMAGE)
+	docker run -it -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(MACHINE_LEARNING_IMAGE)
 
 run-deep-learning-gpu:
 	@echo "Running the deep-learning-gpu-env Docker container..."
-	docker run --name $(DEEP_LEARNING_GPU_IMAGE) -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(DEEP_LEARNING_GPU_IMAGE)
+	docker run -it -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(DEEP_LEARNING_GPU_IMAGE)
 
 run-deep-learning-cpu:
 	@echo "Running the deep-learning-cpu-env Docker container..."
-	docker run --name $(DEEP_LEARNING_CPU_IMAGE) -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(DEEP_LEARNING_CPU_IMAGE)
+	docker run -it -p $(HOST_PORT):$(CONTAINER_PORT) -v $(VOLUME) $(DEEP_LEARNING_CPU_IMAGE)
 
 # Clean up Docker images and containers
 clean: clean-machine-learning clean-deep-learning-gpu clean-deep-learning-cpu
