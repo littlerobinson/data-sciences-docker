@@ -85,6 +85,7 @@ make clean-deep-learning-cpu
 
 ## Directory structure
 
+```
 project-root/
 │
 ├── machine-learning-env/
@@ -101,6 +102,7 @@ project-root/
 │
 ├── Makefile
 └── README.md
+```
 
 ## Licence
 
